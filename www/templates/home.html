@@ -1,0 +1,35 @@
+<ion-view title="Home">
+	<ion-content  scroll="true" class="padding has-header">
+		<form class="list">
+            <label class="item item-select" name="choose your category">
+                <span class="input-label">choose your category</span>
+                <select></select>
+            </label>
+        </form>
+        <ion-list>
+            <ion-item class="item-divider">Unreturned stuff</ion-item>
+           
+            <!-- start of item1 -->
+           
+            <ion-item class="item-thumbnail-left" ng-repeat="item in firstShownReturenedStuff">
+                <img ng-src={{item.image}}>
+                <h2 style="color: #2D9E61">{{item.name}}</h2><!--Title-->
+                <div><div style="color: #278A83"></div> {{item.fname}}<div style="color: 'positive'">{{item.distance}} meter</div> </div>
+            </ion-item>
+
+           <!-- end of item1 -->
+            <ion-item class="item-divider">Limited stuff</ion-item>
+            <ion-item class="item-thumbnail-left" ng-repeat="item in firstShownUnreturenedStuff">
+                 <img ng-src={{item.image}}>
+                <h2 style="color: #2D9E61">{{item.name}}</h2><!--Title-->
+                <div><div style="color: #278A83"></div> {{item.fname}}<div style="color: 'positive'">{{floor(item.distance)}} meter</div> </div>
+            </ion-item>
+            <ion-item class="item-divider">Skills</ion-item>
+             <ion-item class="item-thumbnail-left"  ng-repeat="item in firstShownSkills">
+                 <img ng-src={{item.image}}>
+                <h2 style="color: #2D9E61">{{item.name}}</h2><!--Title-->
+                <div><div style="color: #278A83"></div> {{item.fname}}<div style="color: 'positive'">{{item.distance}} meter</div> </div>
+            </ion-item>
+        </ion-list>
+	</ion-content>
+</ion-view>

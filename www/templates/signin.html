@@ -1,0 +1,18 @@
+<ion-view view-title="Sign-In" name="signIn-view">
+    <ion-content scroll="true" class="has-header padding">
+        <form class="list">
+            <ion-list>
+                <label class="item item-input">
+                    <input type="text" class="form-control" placeholder="Email" ng-model="data.email">
+                </label>
+                <label class="item item-input">
+                    <input type="password" class="form-control" placeholder="Password" ng-model="data.password">
+                </label>
+            </ion-list>
+            <div class="spacer" style="height: 40px;"></div>
+            <a ng-click="login(data)" class="button button-stable button-block " >Sign In</a>
+            <!-- <a ui-sref="menu.home" class="button button-stable button-block " >Sign In</a> -->
+            <!-- <a ui-sref="signUp" class="button button-positive button-clear button-block ">Or create an account</a> -->
+        </form>
+    </ion-content>
+</ion-view>

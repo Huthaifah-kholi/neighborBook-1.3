@@ -1,0 +1,53 @@
+<ion-view title="Signup">
+    <ion-content overflow-scroll="true" padding="true" scroll="true" class="has-header">
+        <form class="list">
+            <ion-list>
+                <item class="item item-divider">
+                    Your Email
+                </item>
+                <item class="item item-input">
+                    <input type="email" placeholder="Email">
+                </item>
+                <item class="item item-divider">
+                    Your Name
+                </item>
+                <item class="item item-input">
+                    <input type="text" placeholder="First name">
+                </item>
+                <item class="item item-input">
+                    <input type="text" placeholder="Last name">
+                </item>
+                <item class="item item-divider">
+                    Gender
+                </item>
+                <ion-radio>Female</ion-radio><!--set the gender-->
+                <ion-radio>Male</ion-radio>
+                <item class="item item-divider">
+                    Password
+                </item>
+                <item class="item item-input">
+                <input type="password" placeholder="Password">
+                </item>
+                <item class="item item-input">
+                    <input type="password" placeholder="Confirm password">
+                </item>
+                <item class="item item-divider">
+                    Position
+                </item>
+                <item class="item item-input">
+                <input type="text" placeholder="Your position">
+                <!-- <ion-checkbox class="item-checkbox-right" ng-model="getLocationAutomaticlly"></ion-checkbox> -->
+                <ion-checkbox class="item-checkbox-right"></ion-checkbox>
+                </item>
+                <item class="item item-divider">
+                    Your phone
+                </item>
+                <item class="item item-input">
+                    <input type="tel" placeholder="Phone number">
+                </item>
+            </ion-list>
+        </form>
+        <a ui-sref="menu.home" class="button button-stable button-block ">Sign up</a>
+        <a ui-sref="signIn" class="button button-positive button-clear button-block ">Or sign in</a>
+    </ion-content>
+</ion-view>
