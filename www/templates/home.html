@@ -1,34 +1,66 @@
 <ion-view title="Home">
 	<ion-content  scroll="true" class="padding has-header">
 		<form class="list">
-            <label class="item item-select" name="choose your category">
-                <span class="input-label">choose your category</span>
-                <select></select>
+            <label style="border-color: #E2B0B1;" class="item item-select" name="choose your category">
+                <span class="input-label">Category</span>
+                <select>
+                    <option ng-repeat="category in categories">{{category}}</option>
+                </select>
+
             </label>
         </form>
-        <ion-list>
-            <ion-item class="item-divider">Unreturned stuff</ion-item>
-           
-            <!-- start of item1 -->
-           
-            <ion-item class="item-thumbnail-left" ng-repeat="item in firstShownReturenedStuff">
-                <img ng-src={{item.image}}>
-                <h2 style="color: #2D9E61">{{item.name}}</h2><!--Title-->
-                <div><div style="color: #278A83"></div> {{item.fname}}<div style="color: 'positive'">{{item.distance}} meter</div> </div>
-            </ion-item>
 
-           <!-- end of item1 -->
-            <ion-item class="item-divider">Limited stuff</ion-item>
-            <ion-item class="item-thumbnail-left" ng-repeat="item in firstShownUnreturenedStuff">
-                 <img ng-src={{item.image}}>
-                <h2 style="color: #2D9E61">{{item.name}}</h2><!--Title-->
-                <div><div style="color: #278A83"></div> {{item.fname}}<div style="color: 'positive'">{{floor(item.distance)}} meter</div> </div>
+        <ion-list>
+            <ion-item style="border-color: #E2B0B1; background-color: #FFF0F1;" class="item-divider ">Unreturned stuff</ion-item>
+            <ion-item style="border-color: #E2B0B1;"   class="item-thumbnail-left " ng-repeat="item in firstShownUnreturenedStuff" >
+                <img ng-src={{item.image}}>
+                <h2 style="color: #B81D22">{{item.name}}</h2><!--Title-->
+                <div> {{item.fname}}</div>
+                <div style="color: #30AB5E">
+                {{item.distance}}
+                    Meter
+                </div>
+
             </ion-item>
-            <ion-item class="item-divider">Skills</ion-item>
-             <ion-item class="item-thumbnail-left"  ng-repeat="item in firstShownSkills">
+<!--
+						<ion-item style="border-color: #E2B0B1;" class="item-thumbnail-left " ng-repeat="item in allUnreturnedStuff" >
+								<img ng-src={{item.image}}>
+								<h2 style="color: #B81D22">{{item.name}}</h2>
+								<div> {{item.fname}}</div>
+								<div style="color: #30AB5E">
+								{{item.distance}}
+										Meter
+								</div>
+
+						</ion-item>
+
+						<ion-item style="border-color: #E2B0B1;" ng-if="showSomeUnreturned" class="right" ng-click="showAllUnreturned()">
+								<h2 style="color: #B81D22">Show all   <i class="icon ion-more"></i></h2>
+
+
+						</ion-item>
+            -->
+            <ion-item style="border-color: #E2B0B1;background-color: #FFF0F1;" class="item-divider ">Limited stuff</ion-item>
+            <ion-item style="border-color: #E2B0B1;" class="item-thumbnail-left " ng-repeat="item in firstShownReturenedStuff">
                  <img ng-src={{item.image}}>
-                <h2 style="color: #2D9E61">{{item.name}}</h2><!--Title-->
-                <div><div style="color: #278A83"></div> {{item.fname}}<div style="color: 'positive'">{{item.distance}} meter</div> </div>
+                <h2 style="color: #B81D22">{{item.name}}</h2><!--Title-->
+                <div> {{item.fname}} </div>
+                <div style="color: #30AB5E">
+                    {{item.distance}}
+                    <!-- <span ng-if="((item.distance) * 1000)>1000"> K</span>  -->
+                    Meter
+                </div>
+            </ion-item>
+            <ion-item style="border-color: #E2B0B1;background-color: #FFF0F1;" class="item-divider  ">Skills</ion-item>
+            <ion-item style="border-color: #E2B0B1;" class="item-thumbnail-left "  ng-repeat="item in firstShownSkills">
+                 <img ng-src={{item.image}}>
+                <h2 style="color: #B81D22">{{item.name}}</h2><!--Title-->
+                <div>{{item.fname}}</div>
+                <div style="color: #30AB5E">
+                {{item.distance}}
+                    <!-- <span ng-if="((item.distance) * 1000)>1000"> K</span>  -->
+                    Meter
+                </div>
             </ion-item>
         </ion-list>
 	</ion-content>

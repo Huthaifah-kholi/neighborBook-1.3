@@ -1,16 +1,19 @@
 <ion-view title="Add skill">
 	<ion-content class="padding">
 		<form class="list">
-            <label class="item item-input" name="It's name">
+            <label class="item item-input" name="It's name" style="border-color: #E2B0B1;">
                 <span class="input-label">Skill name</span>
-                <input type="text" placeholder="It's name">
+                <input type="text" placeholder="It's name" ng-model="skill.name">
             </label>
-            <label class="item item-select">
+            <label class="item item-select" style="border-color: #E2B0B1;">
                 <span class="input-label">choose category</span>
-                <select></select>
+                <select ng-model="skill.category">
+                <option ng-repeat="category in categories">{{category}}</option>
+            </select>
             </label>
-            <ion-item class="item-divider">Free time - Days</ion-item>
-            <ion-list>
+            <ion-item class="item-divider" style="border-color: #E2B0B1; background-color: #FFF0F1;">Free time - Days</ion-item>
+            <!-- here we wnat to make ng-model ::::::::::::::::: -->
+            <ion-list>  
                 <ion-checkbox>Satarday</ion-checkbox>
                 <ion-checkbox>Sunday</ion-checkbox>
                 <ion-checkbox>Monday</ion-checkbox>
@@ -19,11 +22,17 @@
                 <ion-checkbox>Thursday</ion-checkbox>
                 <ion-checkbox>Friday</ion-checkbox>
             </ion-list>
-            <ion-item class="item-divider">Free time - Hours</ion-item>
+            <!-- ::::::::::::::::::::::::::::: -->
+            <ion-item class="item-divider" style="border-color: #E2B0B1; background-color: #FFF0F1;">Free time - Hours</ion-item>
             <label class="item item-input" name="Details and tips">
-                <span class="input-label">Details and tips:</span><textarea placeholder="Details and tips:"> </textarea>
+                <span class="input-label" style="border-color: #E2B0B1; ">Details and tips:</span><textarea placeholder="Details and tips:" ng-model="skill.details"> </textarea>
             </label>
-            <button id="addSkill-button20" style="font-weight:bold;" class="button button-stable  button-block">Post</button>
+            <button ng-click="showActionSheet()" class="button button-block button-positive button-outline">
+            <i class="icon ion-images"></i>
+           Take Photo
+       </button>
+       <img ng-src="{{lastPhoto}}" style="max-width: 100%">
+            <button id="addSkill-button20" style="font-weight:bold;" class="button button-positive  button-block">Post</button>
         </form>
 	</ion-content>
 </ion-view>

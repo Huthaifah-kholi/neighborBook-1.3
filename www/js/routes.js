@@ -24,6 +24,13 @@ angular.module('app.routes', [])         //////////////////////// this Done
     }
   })
 
+  .state('card', {
+    url: '/card',
+        templateUrl: 'templates/card.html',
+        controller: 'cardCtrl'
+
+  })
+
   .state('menu.add.stuff', {
       url: '/stuff',
       views: {
@@ -67,7 +74,7 @@ angular.module('app.routes', [])         //////////////////////// this Done
     url:'/signin',
     templateUrl :'templates/signin.html',
     controller: 'signInCtrl'
-  }) 
+  })
 /*
   .state('signUp',{
     url:'/signup',
@@ -77,6 +84,6 @@ angular.module('app.routes', [])         //////////////////////// this Done
 */
 $urlRouterProvider.otherwise('/signin')
 
-  
+
 
 });

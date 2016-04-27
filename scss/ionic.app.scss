@@ -14,7 +14,24 @@ $assertive:                       #ef473a !default;
 $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
-$positive:                        #278A83 !default;
+
+$positive:                        #B81D22 !default;
+$dark:                            #383838 !default;
+$balanced:                        #2DFF7B !default;
+$stable:                          #f8f8f8 !default;
+$border-color: 					  #E2B0B1;
+
+.custome-side-menu-background {
+	background-color: $stable;
+}
+.custome-item {
+  border-color: $border-color;
+}
+.custome-dark{
+  color: $dark;
+}
+
+
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 
